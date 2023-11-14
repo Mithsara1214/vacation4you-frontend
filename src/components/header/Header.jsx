@@ -27,9 +27,9 @@ const Header = ({ type }) => {
   ]);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
-    adult: 1,
-    children: 0,
-    room: 1,
+    Advanture: 1,
+    SlightSeeing: 0,
+    Tour: 1,
   });
 
   const navigate = useNavigate();
@@ -57,24 +57,17 @@ const Header = ({ type }) => {
         <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <span>Activity Reservation</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
+            <span>Cruise Reservation</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
+            <span>Packages</span>
           </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
-          </div>
+          
         </div>
         {type !== "list" && (
           <>
@@ -83,9 +76,8 @@ const Header = ({ type }) => {
             </h1>
             <p className="headerDesc">
               Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              more with a free Vacation4You account
             </p>
-            <button className="headerBtn">Sign in / Register</button>
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
@@ -121,67 +113,67 @@ const Header = ({ type }) => {
                 <span
                   onClick={() => setOpenOptions(!openOptions)}
                   className="headerSearchText"
-                >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</span>
+                >{`${options.Advanture} advanture · ${options.SlightSeeing} slightseeing · ${options.Tour} tour`}</span>
                 {openOptions && (
                   <div className="options">
                     <div className="optionItem">
-                      <span className="optionText">Adult</span>
+                      <span className="optionText">Advanture</span>
                       <div className="optionCounter">
                         <button
-                          disabled={options.adult <= 1}
+                          disabled={options.Advanture <= 1}
                           className="optionCounterButton"
-                          onClick={() => handleOption("adult", "d")}
+                          onClick={() => handleOption("advanture", "d")}
                         >
                           -
                         </button>
                         <span className="optionCounterNumber">
-                          {options.adult}
+                          {options.Advanture}
                         </span>
                         <button
                           className="optionCounterButton"
-                          onClick={() => handleOption("adult", "i")}
+                          onClick={() => handleOption("advanture", "i")}
                         >
                           +
                         </button>
                       </div>
                     </div>
                     <div className="optionItem">
-                      <span className="optionText">Children</span>
+                      <span className="optionText">Slight Seeing</span>
                       <div className="optionCounter">
                         <button
-                          disabled={options.children <= 0}
+                          disabled={options.SlightSeeing <= 0}
                           className="optionCounterButton"
-                          onClick={() => handleOption("children", "d")}
+                          onClick={() => handleOption("slight seeing", "d")}
                         >
                           -
                         </button>
                         <span className="optionCounterNumber">
-                          {options.children}
+                          {options.SlightSeeing}
                         </span>
                         <button
                           className="optionCounterButton"
-                          onClick={() => handleOption("children", "i")}
+                          onClick={() => handleOption("slight seeing", "i")}
                         >
                           +
                         </button>
                       </div>
                     </div>
                     <div className="optionItem">
-                      <span className="optionText">Room</span>
+                      <span className="optionText">Tour</span>
                       <div className="optionCounter">
                         <button
-                          disabled={options.room <= 1}
+                          disabled={options.Tour <= 1}
                           className="optionCounterButton"
-                          onClick={() => handleOption("room", "d")}
+                          onClick={() => handleOption("tour", "d")}
                         >
                           -
                         </button>
                         <span className="optionCounterNumber">
-                          {options.room}
+                          {options.Tour}
                         </span>
                         <button
                           className="optionCounterButton"
-                          onClick={() => handleOption("room", "i")}
+                          onClick={() => handleOption("tour", "i")}
                         >
                           +
                         </button>

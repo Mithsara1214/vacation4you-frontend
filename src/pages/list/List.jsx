@@ -21,70 +21,107 @@ const List = () => {
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listSearch">
-            <h1 className="lsTitle">Search</h1>
+            <h1 className="lsTitle">Filters</h1>
             <div className="lsItem">
-              <label>Destination</label>
-              <input placeholder={destination} type="text" />
-            </div>
-            <div className="lsItem">
-              <label>Check-in Date</label>
-              <span onClick={() => setOpenDate(!openDate)}>{`${format(
-                date[0].startDate,
-                "MM/dd/yyyy"
-              )} to ${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
-              {openDate && (
-                <DateRange
-                  onChange={(item) => setDate([item.selection])}
-                  minDate={new Date()}
-                  ranges={date}
-                />
-              )}
-            </div>
-            <div className="lsItem">
-              <label>Options</label>
+              <label>Star Rating</label>
               <div className="lsOptions">
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Min price <small>per night</small>
+                  <input type='checkbox' />
+                  <label className=''>1 star</label>
                   </span>
-                  <input type="number" className="lsOptionInput" />
-                </div>
-                <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Max price <small>per night</small>
+                    6 <small></small>
                   </span>
-                  <input type="number" className="lsOptionInput" />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Adult</span>
-                  <input
-                    type="number"
-                    min={1}
-                    className="lsOptionInput"
-                    placeholder={options.adult}
-                  />
+                <span className="lsOptionText">
+                  <input type='checkbox' />
+                  <label className=''>2 star</label>
+                  </span>
+                  <span className="lsOptionText">
+                    8 <small></small>
+                  </span>
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Children</span>
-                  <input
-                    type="number"
-                    min={0}
-                    className="lsOptionInput"
-                    placeholder={options.children}
-                  />
+                <span className="lsOptionText">
+                  <input type='checkbox' />
+                  <label className=''>3 star</label>
+                  </span>
+                  <span className="lsOptionText">
+                    10 <small></small>
+                  </span>
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Room</span>
-                  <input
-                    type="number"
-                    min={1}
-                    className="lsOptionInput"
-                    placeholder={options.room}
-                  />
+                <span className="lsOptionText">
+                  <input type='checkbox' />
+                  <label className=''>4 star</label>
+                  </span>
+                  <span className="lsOptionText">
+                    25 <small></small>
+                  </span>
+                </div>
+                <div className="lsOptionItem">
+                <span className="lsOptionText">
+                  <input type='checkbox' />
+                  <label className=''>5 star</label>
+                  </span>
+                  <span className="lsOptionText">
+                    38 <small></small>
+                  </span>
                 </div>
               </div>
             </div>
-            <button>Search</button>
+            <div className="lsItem">
+              <label>Price</label>
+              <div className="lsOptions">
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">
+                  <input type='checkbox' />
+                  <label className=''>$20-$50</label>
+                  </span>
+                  <span className="lsOptionText">
+                    6 <small></small>
+                  </span>
+                </div>
+                <div className="lsOptionItem">
+                <span className="lsOptionText">
+                  <input type='checkbox' />
+                  <label className=''>$50-$80</label>
+                  </span>
+                  <span className="lsOptionText">
+                    8 <small></small>
+                  </span>
+                </div>
+                <div className="lsOptionItem">
+                <span className="lsOptionText">
+                  <input type='checkbox' />
+                  <label className=''>$80-120</label>
+                  </span>
+                  <span className="lsOptionText">
+                    10 <small></small>
+                  </span>
+                </div>
+                <div className="lsOptionItem">
+                <span className="lsOptionText">
+                  <input type='checkbox' />
+                  <label className=''>$200-500</label>
+                  </span>
+                  <span className="lsOptionText">
+                    25 <small></small>
+                  </span>
+                </div>
+                <div className="lsOptionItem">
+                <span className="lsOptionText">
+                  <input type='checkbox' />
+                  <label className=''>$500-$1000</label>
+                  </span>
+                  <span className="lsOptionText">
+                    38 <small></small>
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="listResult">
             <SearchItem />
